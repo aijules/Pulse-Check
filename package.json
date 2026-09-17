@@ -1,0 +1,14 @@
+{
+  "name": "pulse-check-api",
+  "version": "1.0.0",
+  "description": "Dead Man's Switch API: devices register a countdown monitor and must send heartbeats before it expires, or an alert fires.",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
