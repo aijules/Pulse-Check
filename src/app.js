@@ -97,6 +97,14 @@ function handlePause(res, monitor) {
 async function routeRequest(req, res, monitors) {
   const { pathname } = new URL(req.url, 'http://localhost');
 
+  if (pathname === '/' && req.method === 'GET') {
+    return sendJson(res, 200, {
+      service: 'Pulse-Check API',
+      status: 'ok',
+      docs: 'https://github.com/aijules/Pulse-Check#3-api-documentation',
+    });
+  }
+
   if (pathname === '/monitors' && req.method === 'POST') {
     return handleRegister(req, res, monitors);
   }
